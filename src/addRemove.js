@@ -30,7 +30,7 @@ export const displayTasks = () => {
       <div class="todo">
         <input class="checkbox" ${completed === true ? 'checked' : ''} type="checkbox" name="" id="" />
         <p class="description" style="text-decoration:${completed === true ? 'line-through' : 'none'}" data-edit=${index}>${description}</p>
-        <img class="dots" src="./images/Dots.png" alt="vertical-dots">;
+        <img class="dots" src="./images/Dots.png" alt="vertical-dots">
         <i class="fa-solid fa-file-pen edit__todo"></i>
         <i class="fa-solid fa-trash-can remove" data-index=${index} data-info=${description}></i>
       </div>
