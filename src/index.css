@@ -28,9 +28,11 @@ h1 {
 }
 
 .todo-list {
-  padding: 0;
+  margin: 10px;
   height: auto;
   background-color: #fff;
+  display: flex;
+  justify-content: space-between;
 }
 
 .todo-list li {
@@ -88,4 +90,19 @@ input:focus {
   padding: 20px;
   margin: auto;
   cursor: pointer;
+}
+
+.input-text {
+  width: 60%;
+}
+
+.todo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.edit__section {
+  justify-content: center;
+  align-self: center;
 }

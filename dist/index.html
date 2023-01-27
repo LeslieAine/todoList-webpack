@@ -10,12 +10,15 @@
 <body>
     <h1>TO-DO List</h1>
     <div class="tasks-wrapper">
-      <ul class="todo-list">
-        <li class="tasks-title"><label>Today's To Do</label><img class="refresh-img" src="/b87d37e1f8cba6b5434f.png" alt="Refresh-list"></li>
-        <li><input type="text" id="input-task" placeholder="Add to your list..."></li>
-      </ul>
+      <li class="tasks-title"><label>Today's To Do</label><img class="refresh-img" src="/b87d37e1f8cba6b5434f.png" alt="Refresh-list"></li>
+      <form class="todo-list">
+        <input class="input-text" type="text" id="input-task" placeholder="Add to your list...">
+        <button class="submit-btn" type="submit">Add</button>
+      </form>
+      <div class="todo-list-items"></div>
 
       <p class="clear-all">Clear all completed</p>
     </div>
+    <script src="https://kit.fontawesome.com/f6935772b1.js" crossorigin="anonymous"></script>
 </body>
 </html>
