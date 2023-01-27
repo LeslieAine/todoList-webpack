@@ -4,7 +4,7 @@ const handleCheck = (tasks, todoList, displayTasks) => {
   todoList.addEventListener('change', (e) => {
     const todoItem = e.target.parentElement.querySelector('.description');
     const taskIndex = todoItem.dataset.edit;
-
+    //* add line through
     if (
       e.target.classList.contains('checkbox')
       && e.target.checked === true
