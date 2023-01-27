@@ -1,4 +1,6 @@
 import { addToStorage, getFromStorage } from './updateLocalStorage.js';
+import handleCheck from './checkbox.js';
+import clearAll from './clearTasks.js';
 
 const todoList = document.querySelector('.todo-list-items');
 const input = document.querySelector('.input-text');
@@ -23,11 +25,11 @@ export const addTask = () => {
 //* display todo
 export const displayTasks = () => {
   const taskData = tasks.map((item) => {
-    const { index, description } = item;
+    const { index, description, completed } = item;
     return `
       <div class="todo">
-        <input type="checkbox" name="" id="" class="checkbox" />
-        <p class="description" data-edit=${index}>${description}</p>
+        <input class="checkbox" ${completed === true ? 'checked' : ''} type="checkbox" name="" id="" />
+        <p class="description" style="text-decoration:${completed === true ? 'line-through' : 'none'}" data-edit=${index}>${description}</p>
         <img class="dots" src="./images/Dots.png" alt="vertical-dots">;
         <i class="fa-solid fa-file-pen edit__todo"></i>
         <i class="fa-solid fa-trash-can remove" data-index=${index} data-info=${description}></i>
@@ -78,3 +80,6 @@ export const removeAndEditTodo = () => {
     }
   });
 };
+
+handleCheck(tasks, todoList, displayTasks);
+clearAll(tasks, todoList);
