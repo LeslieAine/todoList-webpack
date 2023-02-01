@@ -83,3 +83,5 @@ export const removeAndEditTodo = () => {
 
 handleCheck(tasks, todoList, displayTasks);
 clearAll(tasks, todoList);
+
+module.exports = addTask;
