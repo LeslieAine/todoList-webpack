@@ -28,8 +28,12 @@ export const displayTasks = () => {
     const { index, description, completed } = item;
     return `
       <div class="todo">
-        <input class="checkbox" ${completed === true ? 'checked' : ''} type="checkbox" name="" id="" />
-        <p class="description" style="text-decoration:${completed === true ? 'line-through' : 'none'}" data-edit=${index}>${description}</p>
+        <input class="checkbox" ${
+          completed === true ? 'checked' : ''
+        } type="checkbox" name="" id="" />
+        <p class="description" style="text-decoration:${
+          completed === true ? 'line-through' : 'none'
+        }" data-edit=${index}>${description}</p>
         <img class="dots" src="./images/Dots.png" alt="vertical-dots">;
         <i class="fa-solid fa-file-pen edit__todo"></i>
         <i class="fa-solid fa-trash-can remove" data-index=${index} data-info=${description}></i>
@@ -57,7 +61,8 @@ export const removeAndEditTodo = () => {
 
     //* edit todo
     if (e.target.classList.contains('edit__todo')) {
-      const todoDescription = e.target.parentElement.querySelector('.description');
+      const todoDescription =
+        e.target.parentElement.querySelector('.description');
       editSection.classList.add('show_edit_section');
       editInput.value = todoDescription.innerText;
       // discard changes
@@ -68,9 +73,7 @@ export const removeAndEditTodo = () => {
       // save changes
       saveEditButton.addEventListener('click', () => {
         const editIndex = todoDescription.dataset.edit;
-        const editItem = tasks.find(
-          (item) => item.index === +editIndex,
-        );
+        const editItem = tasks.find((item) => item.index === +editIndex);
         editItem.description = editInput.value;
         todoDescription.innerText = editInput.value;
         addToStorage(tasks);
